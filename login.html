@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+</head>
+      <body>
+        <!--添加图标+Show Login Form这个“按钮”-->
+<div class="show-login-btn">
+	<i class="fas fa-sign-in-alt"></i>Show Login Form
+</div>
+
+  <div class="login-box">
+  <div class="hide-login-btn"><i class="fas fa-times"></i></div>
+<form class="login-form" action="index.html" method="post">
+  <h1>Login</h1>
+
+  <div class="txtb">
+    <input type="text" >
+    <span data-placeholder="Username"></span>
+  </div>
+
+  <div class="txtb">
+    <input type="password" >
+    <span data-placeholder="Password"></span>
+  </div>
+
+
+     <input type="submit" class="logbtn" value="Login" >
+
+
+    <br/>
+    <input type="reset" class="logbtn" value="清除">
+
+    <div class="button-text">
+Don't have account <a href="#">Sign up</a>
+
+    </div>
+</form>
+</div>
+
+<script type="text/javascript">
+$(".txtb input").on("focus",function(){
+  $(this).addClass("focus");
+});
+
+$(".txtb input").on("blur",function(){
+  if($(this).val()=="")
+  $(this).removeClass("focus");
+});
+
+</script>
+
+<!--给Show Login Form写一个JavaScript脚本-->
+<script type="text/javascript">
+  $(".show-login-btn").on("click",function(){
+    $(".login-box").toggleClass("showed");
+  });
+  $(".hide-login-btn").on("click",function(){
+    $(".login-box").toggleClass("showed");
+  });
+</script>
+      </body>
+
+</html>
